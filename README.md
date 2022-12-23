@@ -3,17 +3,17 @@
 
 This is a Max For Live device and a pair of TouchOSC layouts that provide a control surface that auto-labels parameter controls when a device is selected in your Ableton Live set.
 
+### Changelog
+
+* v1 - [zip](https://github.com/zsteinkamp/m4l-Bluhand/raw/main/frozen/Bluhand-v1.zip) - 2022-12-22 - Initial release.
+
 ## Installation / Setup
 
-If you just want to download and install the device, then go to the [frozen/](https://github.com/zsteinkamp/m4l-Bluhand/tree/main/frozen) directory and download the newest version there. Also download the newest `.tosc` file(s). You can also download them directly via the links in *Changelog* below.
+If you just want to download and install the device, then go to the [frozen/](https://github.com/zsteinkamp/m4l-Bluhand/tree/main/frozen) directory and download the newest zipfile there. You can also download directly via the links in *Changelog* above.
 
 You will need to have the [TouchOSC](https://hexler.net/touchosc) app installed on your iPad and configured to talk with your computer, along with the appropriate `.tosc` file on the iPad. Instructions for that are below.
 
 If you want to use the non-frozen device (e.g. to do your own development) you will need to install the `zero.*` package. To do this, open the Package Manager in Max, then search for 'zero'. The package to install is called `zero` and it is published by Cycling '74.
-
-### Changelog
-
-* v1 - [amxd](https://github.com/zsteinkamp/m4l-Bluhand/raw/main/frozen/Bluhand-v1.amxd) [tosc (16 params)](https://github.com/zsteinkamp/m4l-Bluhand/raw/main/frozen/bluhand-16-v1.tosc) [tosc (32 params)](https://github.com/zsteinkamp/m4l-Bluhand/raw/main/frozen/bluhand-32-v1.tosc) - 2022-12-22 - Initial release.
 
 ## Usage
 
