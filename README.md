@@ -5,6 +5,7 @@ This is a Max For Live device and a pair of TouchOSC layouts that provide a cont
 
 ### Changelog
 
+* v2 - [zip](https://github.com/zsteinkamp/m4l-Bluhand/raw/main/frozen/Bluhand-v2.zip) - 2022-12-22 - Use appointed_device (blue hand) instead of selected_device.
 * v1 - [zip](https://github.com/zsteinkamp/m4l-Bluhand/raw/main/frozen/Bluhand-v1.zip) - 2022-12-22 - Initial release.
 
 ## Installation / Setup
