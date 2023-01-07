@@ -51,11 +51,11 @@ function setupListener() {
   data.observers.trackName.mode = 1;
   data.observers.trackName.property = "name";
 
-  data.observers.deviceName = new LiveAPI(deviceNameCallback, "live_set view selected_track view selected_device");
+  data.observers.deviceName = new LiveAPI(deviceNameCallback, "live_set appointed_device");
   data.observers.deviceName.mode = 1;
   data.observers.deviceName.property = "name";
 
-  data.observers.params = new LiveAPI(parametersCallback, "live_set view selected_track view selected_device");
+  data.observers.params = new LiveAPI(parametersCallback, "live_set appointed_device");
   data.observers.params.mode = 1;
   data.observers.params.property = "parameters";
 }
