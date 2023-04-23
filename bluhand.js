@@ -100,9 +100,9 @@ function deviceNameCallback(args) {
 }
 
 function updateDeviceName() {
-  var message = ["/currDeviceName", data.trackName + " > " + data.deviceName];
+  var message = ["/bcurrDeviceName", data.trackName + " > " + data.deviceName];
   if (!(data.trackName && data.deviceName)) {
-    message = ["/currDeviceName", "No device selected"];
+    message = ["/bcurrDeviceName", "No device selected"];
   }
   debug(message);
   outlet(OUTLET_OSC, message);
@@ -144,7 +144,7 @@ function parametersCallback(args) {
       currParam.min = parseFloat(currParam.paramObj.get("min")) || 0,
       currParam.max = parseFloat(currParam.paramObj.get("max")) || 1,
 
-      message = ["/param" + paramIdx, currParam.name];
+      message = ["/bparam" + paramIdx, currParam.name];
       outlet(OUTLET_OSC, message);
 
       data.params.push(currParam);
@@ -156,9 +156,9 @@ function parametersCallback(args) {
 
   // zero-out the rest of the param sliders
   for (paramIdx = data.params.length; paramIdx < MAX_PARAMS; paramIdx++) {
-    outlet(OUTLET_OSC, ["/param" + paramIdx, nullString]);
-    outlet(OUTLET_OSC, ["/val" + paramIdx, 0]);
-    outlet(OUTLET_OSC, ["/val" + paramIdx + "color", "FF000099"]);
+    outlet(OUTLET_OSC, ["/bparam" + paramIdx, nullString]);
+    outlet(OUTLET_OSC, ["/bval" + paramIdx, 0]);
+    outlet(OUTLET_OSC, ["/bval" + paramIdx + "color", "FF000099"]);
   }
 }
 
@@ -170,10 +170,10 @@ function sendVal(paramIdx) {
   // the value, expressed as a proportion between the param min and max
   var outVal = (param.val - param.min) / (param.max - param.min);
 
-  var message = ["/val" + paramIdx, outVal]
+  var message = ["/bval" + paramIdx, outVal]
   debug(message);
   outlet(OUTLET_OSC, message);
-  outlet(OUTLET_OSC, ["/val" + paramIdx + "color", data.trackColor]);
+  outlet(OUTLET_OSC, ["/bval" + paramIdx + "color", data.trackColor]);
 }
 
 function valueCallback(args) {
@@ -203,7 +203,7 @@ function valueCallback(args) {
 }
 
 function oscReceive(args) {
-  var matches = args.match(/^\/val(\d+) ([0-9.-]+)$/);
+  var matches = args.match(/^\/bval(\d+) ([0-9.-]+)$/);
   debug(JSON.stringify(matches));
 
   if (!matches || matches.length !== 3) {
